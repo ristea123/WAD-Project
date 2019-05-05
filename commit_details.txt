@@ -1,3 +1,7 @@
-Changed the page layout - Changed the name on the page from basic MVC name to my name of the app
-                        - Changed Html action links. An Html action link creates a button on the page that changes the current page. For example, by default you start on the home page, and if you click on students, then the page will change and all the students will be shown.
+Changed the page layout 
+	- Changed the name on the page from basic MVC name to my    name of the app
+	- Changed Html action links. An Html action link creates    a button on the page that changes the current page. For example, by default    you start on the home page, and if you click on students, then the page will    change and all the students will be shown.
+
 Installed Entity Framework - self explanatory
+
+Implemented Models - Added a class for each type of entity in my application called models. They define an entity like game or reviewer is.
