@@ -1,7 +1,19 @@
 Changed the page layout 
-	- Changed the name on the page from basic MVC name to my    name of the app
-	- Changed Html action links. An Html action link creates    a button on the page that changes the current page. For example, by default    you start on the home page, and if you click on students, then the page will    change and all the students will be shown.
+- Changed the name on the page from basic MVC name to my    name of the app
 
-Installed Entity Framework - self explanatory
+- Changed Html action links. An Html action link creates    a button on the page that changes the current page. For example, by default    you start on the home page, and if you click on students, then the page will    change and all the students will be shown.
 
-Implemented Models - Added a class for each type of entity in my application called models. They define an entity like game or reviewer is.
+Installed Entity Framework 
+- self explanatory
+
+Implemented Models 
+- Added a class for each type of entity in my application called models. They define an entity like game or reviewer is.
+
+Implemented Context and Initializer 
+- The main class that coordinates Entity Framework functionality for a given data model is the database context class - in my case SearchAppContext.
+
+-The modelBuilder.Conventions.Remove statement in the OnModelCreating method prevents table names from being pluralized. If you didn't do this, the generated tables in the database would be named Developers, Clients, and Games. Instead, the table names will be Developer, Client, and Game
+
+- The AppInitializer class creates a database only if it doesn't exist (and throw an exception if the model has changed and the database already exists).
+
+-Changes in Web.config tell Entity Framework to use AppInitializer
