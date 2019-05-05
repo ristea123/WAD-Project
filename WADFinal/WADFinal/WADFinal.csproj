@@ -126,10 +126,21 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\DeveloperController.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReviewerController.cs" />
+    <Compile Include="DAL\AppInitializer.cs" />
+    <Compile Include="DAL\SearchAppContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Developer.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\Reviewer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -168,10 +179,29 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Client\Create.cshtml" />
+    <Content Include="Views\Client\Delete.cshtml" />
+    <Content Include="Views\Client\Details.cshtml" />
+    <Content Include="Views\Client\Edit.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
+    <Content Include="Views\Developer\Create.cshtml" />
+    <Content Include="Views\Developer\Delete.cshtml" />
+    <Content Include="Views\Developer\Details.cshtml" />
+    <Content Include="Views\Developer\Edit.cshtml" />
+    <Content Include="Views\Developer\Index.cshtml" />
+    <Content Include="Views\Game\Create.cshtml" />
+    <Content Include="Views\Game\Delete.cshtml" />
+    <Content Include="Views\Game\Details.cshtml" />
+    <Content Include="Views\Game\Edit.cshtml" />
+    <Content Include="Views\Game\Index.cshtml" />
+    <Content Include="Views\Reviewer\Create.cshtml" />
+    <Content Include="Views\Reviewer\Delete.cshtml" />
+    <Content Include="Views\Reviewer\Details.cshtml" />
+    <Content Include="Views\Reviewer\Edit.cshtml" />
+    <Content Include="Views\Reviewer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

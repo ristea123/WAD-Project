@@ -17,3 +17,8 @@ Implemented Context and Initializer
 - The AppInitializer class creates a database only if it doesn't exist (and throw an exception if the model has changed and the database already exists).
 
 -Changes in Web.config tell Entity Framework to use AppInitializer
+
+Implemented Controllers and fixed errors
+-Fixed the names in _Layout.cshtml
+
+-Created controllers and views. The controllers and views work together. For example, when you click the student button on the page, the controller takes the list of students from SearchAppContext and the view displays it. They can perform various operations, but the concept is the same.
