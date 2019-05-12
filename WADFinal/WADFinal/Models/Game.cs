@@ -12,7 +12,7 @@ namespace WADFinal.Models
         public string Reviews { get; set; }
 
         public int DeveloperId { get; set; }
-        public int ReviewrId { get; set; }
+        public int ReviewrId { get; set; } 
 
     }
 }

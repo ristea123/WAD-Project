@@ -47,47 +47,50 @@ namespace WADFinal.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,User,Password,LoggedIn")] Developer developer)
+        public ActionResult Create([Bind(Include = "Name,User,Password,LoggedIn")] Developer developer)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Developers.Add(developer);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Developers.Add(developer);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-
+            catch (DataException /* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+            }
             return View(developer);
         }
-
         // GET: Developer/Edit/5
-        public ActionResult Edit(int? id)
+        [HttpPost, ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditPost(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Developer developer = db.Developers.Find(id);
-            if (developer == null)
+            var developerToUpdate = db.Developers.Find(id);
+            if (TryUpdateModel(developerToUpdate, "",
+               new string[] { "Name", "User", "Password", "LoggedIn" }))
             {
-                return HttpNotFound();
-            }
-            return View(developer);
-        }
+                try
+                {
+                    db.SaveChanges();
 
-        // POST: Developer/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,User,Password,LoggedIn")] Developer developer)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(developer).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
+                }
+                catch (DataException /* dex */)
+                {
+                    //Log the error (uncomment dex variable name and add a line here to write a log.
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                }
             }
-            return View(developer);
+            return View(developerToUpdate);
         }
 
         // GET: Developer/Delete/5

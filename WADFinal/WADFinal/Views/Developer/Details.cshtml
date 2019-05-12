@@ -41,7 +41,28 @@
         <dd>
             @Html.DisplayFor(model => model.LoggedIn)
         </dd>
-
+        <dt>
+            @Html.DisplayNameFor(model => model.Games)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Game Name</th>
+                    <th>Reviews</th>
+                </tr>
+                @foreach (var item in Model.Games)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Reviews)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
     </dl>
 </div>
 <p>
