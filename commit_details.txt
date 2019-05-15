@@ -22,3 +22,30 @@ Implemented Controllers and fixed errors
 -Fixed the names in _Layout.cshtml
 
 -Created controllers and views. The controllers and views work together. For example, when you click the student button on the page, the controller takes the list of students from SearchAppContext and the view displays it. They can perform various operations, but the concept is the same.
+
+Changed app to .net core and added authentification
+
+- Changed app to .net core(removed old project)
+- relevant files(edited by me) : - startup.cs
+				 - controllers folder
+				 - _Layout.cshtml
+	
+
+
+-startup.cs
+Creates user roles and "connects" them to the user(edits database tables aspnetroles and aspnetuserroles)
+
+connects app to the database
+	-connects context class with database and services
+
+-controllers
+	-added authorizations based on user roles and changed names from last commit
+
+-_Layout.cshtml
+	-Changed the page so that only accesible pages are viewed. For example the developers page is now only accesible when you are logged in as a developer.
+
+Other changes : commented email confirmation code in register.cshtml.cs(The app does not used this, the tutorial i used instructed me to comment the code).
+
+
+
+                  - 
