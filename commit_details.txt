@@ -26,11 +26,13 @@ Implemented Controllers and fixed errors
 Changed app to .net core and added authentification
 
 - Changed app to .net core(removed old project)
-- relevant files(edited by me) : - startup.cs
-				 - controllers folder
-				 - _Layout.cshtml
+- relevant files(edited by me or to be edited) : - startup.cs
+				 		 - controllers folder
+		 				 - _Layout.cshtml
+-SearchAppContext is now derived from IdentityDbContext
+-Added migrations
 	
-
+-Added identity memberships system.
 
 -startup.cs
 Creates user roles and "connects" them to the user(edits database tables aspnetroles and aspnetuserroles)
@@ -44,7 +46,10 @@ connects app to the database
 -_Layout.cshtml
 	-Changed the page so that only accesible pages are viewed. For example the developers page is now only accesible when you are logged in as a developer.
 
-Other changes : commented email confirmation code in register.cshtml.cs(The app does not used this, the tutorial i used instructed me to comment the code).
+Other changes : commented email confirmation code in register.cshtml.cs(The app does not used this, the tutorial i used instructed me to comment the code). Name and database changes
+through files when changed project.
+
+To be implemented before starting next presentation work. Fix CRUD operations, review models(for e.g. account model might be deleted or used for a custom identity)
 
 
 
